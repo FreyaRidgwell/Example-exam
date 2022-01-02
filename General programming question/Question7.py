@@ -30,7 +30,6 @@ or the program is largely incomplete.
 
 '''
 
-
 # Write a function with two input arguments 'username' and 'location'. The function
 # should return text 'Hello, {name}, how is {location}?'. 
 # 
@@ -38,8 +37,22 @@ or the program is largely incomplete.
 # should default to 'London'. 
 # weight = 3
 
-def greeting():
-    return 
+username = ""
+
+location = str(input("Enter your location (you can leave this blank if location = London): "))
+
+if location == "":
+    location = "London"
+username = str(input("Enter your username: "))
+
+
+def greeting(username, location):
+
+    output = f"Hello {username}, how is {location}?"
+    
+    return output
+
+print(greeting(username, location))
 
 
 
