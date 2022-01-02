@@ -25,15 +25,28 @@ or the program is largely incomplete.
 0 points - The student has not attempted to solve the exercise or missed the point entirely 
 (e.g., blank page or solved something unrelated to the question).
 
-
-
-
 '''
 
 # Write a function that returns the largest value that is also an even value in the
 # input dictionary whose values are all whole numbers (values, not keys).
 # # weight = 5 
 
-def value_greatest_even():
-    return 
+input_dictionary = {"hello":5, "yes":12,"england":21, "no": 512, "monkey": 513, "elephant":24}
 
+def value_greatest_even(input_dictionary):
+
+# declaring and initialising the variable greatest_value as 0 
+    greatest_value = 0
+
+
+# iterating through all of the values in the input_dictionary
+    for value in input_dictionary.values(): 
+
+        # checking if the current value is greater than the stored greatest value and if it is even
+        if int(value) > greatest_value and int(value) % 2 == 0: 
+            greatest_value = value
+
+
+    return greatest_value
+
+print(value_greatest_even(input_dictionary))
