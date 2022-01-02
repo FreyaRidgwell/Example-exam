@@ -44,7 +44,7 @@ def longest_key(input_dictionary):
     longest_key = ""
 
 # iterating through all of the keys in the dictionary 
-    for key in input_dictionary:
+    for key in input_dictionary.keys():
 
 # compares the length of the current key to the longest key stored
         if len(key) > len(longest_key):
