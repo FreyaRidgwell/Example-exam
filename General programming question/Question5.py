@@ -34,8 +34,26 @@ or the program is largely incomplete.
 # whose keys are all strings.
 # weight = 2
 
-def longest_key():
-    return 
+
+input_dictionary = {"hello":5, "yes":12,"england":20}
+
+
+def longest_key(input_dictionary):
+
+# declaring and initiating the longest_key variable
+    longest_key = ""
+
+# iterating through all of the keys in the dictionary 
+    for key in input_dictionary:
+
+# compares the length of the current key to the longest key stored
+        if len(key) > len(longest_key):
+            longest_key = key
+
+
+    return longest_key
+
+print(longest_key(input_dictionary))
 
 
 
