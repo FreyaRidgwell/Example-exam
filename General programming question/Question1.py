@@ -38,5 +38,18 @@ or the program is largely incomplete.
 # returns ["hello", "list"]
 # weight = 2
 
-def longerThanN():
-    return 
+
+input_list = ["cat", "dog", "hello", "list", "hi"]
+n = 3
+
+def longerThanN(input_list, n):
+    
+    output_list = []
+
+    for i in range(0,len(input_list)):
+        if len(input_list[i]) > n: 
+            output_list.append(input_list[i])
+
+    return output_list 
+
+print(longerThanN(input_list, n))
