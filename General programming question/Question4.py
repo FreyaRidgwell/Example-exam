@@ -25,9 +25,6 @@ or the program is largely incomplete.
 0 points - The student has not attempted to solve the exercise or missed the point entirely 
 (e.g., blank page or solved something unrelated to the question).
 
-
-
-
 '''
 
 # Write a function that takes a string as parameter, which will contain single digit numbers, 
@@ -40,6 +37,47 @@ or the program is largely incomplete.
 # Example2: input = "sdfhdsl4??sfasdfga?6sdjkfhbdsjhfkb" output = True (the two numbers sum to 10)
 # weight = 8
 
-def question_mark():
-    return 
+string_input = "sdfhdsl4??sfasdfga?1sdjkfhbdsjhfkb"
+
+def question_mark(string_input):
+
+# counter is used to keep track of the number of question marks
+# total_number finds the sum of the numbers pair in the string 
+# index_of_numbers keeps track of th eindex positions of integers in the string
+
+    list_input = []
+    total_number = 0
+    index_of_numbers = []
+    counter = 0
+
+    for i in range(0,len(string_input)):
+
+        list_input.append(string_input[i])
+
+# checks if the value at the index posistion in the string is equal to a digit (integer)
+        if list_input[i].isdigit():
+            total_number = total_number + int(list_input[i])
+            index_of_numbers.append(i)
+
+# checks if the sum of the pair of numbers is equal to ten
+    if total_number == 10:
+            
+        for j in range(index_of_numbers[0],index_of_numbers[1]):
+
+            if string_input[j] == "?":
+                counter += 1
+
+# checks if there are 3 question marks in the range of the pair of numbers
+            if counter == 3: 
+                output = True
+
+    else: 
+        output = False
+
+    return output
+
+
+print(question_mark(string_input))
+
+
 
