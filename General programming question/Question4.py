@@ -76,7 +76,6 @@ def question_mark(string_input):
 
     return output
 
-
 print(question_mark(string_input))
 
 
