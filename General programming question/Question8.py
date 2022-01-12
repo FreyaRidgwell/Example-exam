@@ -25,11 +25,7 @@ or the program is largely incomplete.
 0 points - The student has not attempted to solve the exercise or missed the point entirely 
 (e.g., blank page or solved something unrelated to the question).
 
-
-
-
 '''
-
 # Write a function with two inputs, one matrix (a list of lists, in which every sublist is the same dimension)
 # and a single character. The function will return true if it can find, within the matrix, a 2x2 submatrix made
 # with the single character.
@@ -47,8 +43,38 @@ or the program is largely incomplete.
 # in which case the function would return True, if the character was "a" and false otherwise.
 # weight = 15
 
-def find_letter():
-    return
+matrix = [[1,2,"a","a"],["a", 3, "a", "a"],[1, 4, 6, 8], [5, 2, 6, 6]]
+charecter = "a"
+
+import numpy as np
+
+def find_letter(matrix_input, charecter_input):
+
+    numpy_matrix = np.array(matrix_input)
+
+    for i in range(0,len(numpy_matrix)+1):
+        for j in range(0,len(numpy_matrix[i])):
+
+            if i+1 < 4 and j+1 < 4: 
+
+                if numpy_matrix[i][j] == charecter_input and numpy_matrix[i][j+1] == charecter_input: 
+                    row = i 
+                    column = j 
+                    
+                    if numpy_matrix[row+1][column] == charecter_input and numpy_matrix[row+1][column+1] == charecter_input: 
+                        return "True"
+
+                    else: 
+                        return "False"
+
+            else: 
+                return "False"
+
+print(find_letter(matrix,charecter))
+
+
+                    
+
 
 
 
