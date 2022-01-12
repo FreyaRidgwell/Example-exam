@@ -279,17 +279,7 @@ class Student:
 #       - If course is specified, the function will return the mean for that specific course across the list of students.
 
 
-    def calculate_overall_mean(self, student_list, course = None):
-
-        output_dictionary = {}
-
-        if course == None: 
-            output_dictionary.keys().append(self.courses.student_list)
-
-            output_dictionary.values().append()
-
-     
-
+student_list = []
 
 def New_student():
 
@@ -303,11 +293,54 @@ def New_student():
 
         student_list.append(new_student)
 
-New_student()
+        return student_list
+
+
+def calculate_overall_mean(self, student_list, course = None):
+
+    dictionary_counting = {}
+    dictionary_calculating_means = {}
+    total_grade = 0 
+    number_of_students = 0
+
+    if course == None: 
+
+        for student in student_list:
+            for course in student.courses.keys():
+
+                if course in dictionary_counting:
+                    dictionary_counting[course] += 1
+
+                else: 
+                    dictionary_counting[course] = 1 
+
+                if course in dictionary_calculating_means: 
+                    dictionary_calculating_means[course] += student[course]["grade"]
+
+                else:
+                    dictionary_calculating_means.keys.append(course)
+                    dictionary_calculating_means[course] += student[course]["grade"]
+
+            for i in dictionary_calculating_means:
+
+                dictionary_calculating_means[i] = dictionary_calculating_means[course]/dictionary_counting[course]
+
+            return dictionary_calculating_means
+
+
+    for i in range(0,len(dictionary.keys())):
+        if student_list.course == i:
+
+            total_grade += student_list[course]["grade"] 
+            number_of_students += 1 
+
+
+
+#  New_student()
 
 #for i in student_list:
 
- #   print(i.courses)   
+    #print(i.courses)   
     
 
 student1 = Student({"computing":{"year":1,"grade":5},
@@ -318,4 +351,7 @@ student1 = Student({"computing":{"year":1,"grade":5},
 
 #student1.change_grade("pe",6)
 
-student1.calculate_mean(["french"])
+#student1.calculate_mean(["french"])
+
+
+print(calculate_overall_mean(student_list))
