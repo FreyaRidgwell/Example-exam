@@ -37,7 +37,7 @@ or the program is largely incomplete.
 # Example2: input = "sdfhdsl4??sfasdfga?6sdjkfhbdsjhfkb" output = True (the two numbers sum to 10)
 # weight = 8
 
-string_input = "sdfhdsl4??sfasdfga?1sdjkfhbdsjhfkb"
+string_input = "sdfhdsl4??sfasdfga?6sdjkfhbdsjhfkb"
 
 def question_mark(string_input):
 
@@ -49,13 +49,14 @@ def question_mark(string_input):
     total_number = 0
     index_of_numbers = []
     counter = 0
+    number_list = ["0","1","2","3","4","5","6","7","8","9"]
 
     for i in range(0,len(string_input)):
 
         list_input.append(string_input[i])
 
 # checks if the value at the index posistion in the string is equal to a digit (integer)
-        if list_input[i].isdigit():
+        if list_input[i] in number_list:
             total_number = total_number + int(list_input[i])
             index_of_numbers.append(i)
 
