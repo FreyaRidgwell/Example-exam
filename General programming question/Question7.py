@@ -37,22 +37,16 @@ or the program is largely incomplete.
 # should default to 'London'. 
 # weight = 3
 
-username = ""
+def greeting(username, location = None):
 
-location = str(input("Enter your location (you can leave this blank if location = London): "))
-
-if location == "":
-    location = "London"
-username = str(input("Enter your username: "))
-
-
-def greeting(username, location):
+    if location == None:
+        location = "London"
 
     output = f"Hello {username}, how is {location}?"
     
     return output
 
-print(greeting(username, location))
+print(greeting("FreyaRidgwell"))
 
 
 

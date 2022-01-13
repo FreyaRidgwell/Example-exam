@@ -46,17 +46,36 @@ import numpy as np
 os.chdir("Plot question")
 os.chdir("Data")
 
-# opening the data.txt file
+# opening the data.txt file as read
 data_file = open("data.txt","r")
 
-# readlines takes each line and converts it into a string
+# storing the entire data file as a string called dataString
 dataString = data_file.read()
 
+# closing the data file
 data_file.close()
 
+# .split() divides the string into a list 
 data_list = dataString.split()
 
+# converting the data list to an np array
 dataArray = np.array(data_list)
+
+
+# as the file is read all of the data in the file is placed into a single string
+# the string is then split to form a list 
+# the list is then converted to a numpy array so that it can be formatted into the right number of rows and cols
+# the array is reshaped to the correct dimensions
+# create seperate lists for storing data from seperate columns 
+# for loop to iterate through entire array 
+# for values in first column do for i in range(0,len(numpy_array)): 
+# first_column.append(float(numpy_array[i][0]))
+# remember to convert to float to allow the data points to be plotted
+
+# to check how many numbers are associated with the array dataArray
+#print(len(dataArray))
+
+# reshaping the array so that it has 10,000 rows and 7 columns
 dataArray = dataArray.reshape(10000,7)
 
 first_column = []

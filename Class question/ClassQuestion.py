@@ -121,8 +121,6 @@ class Student:
                             
                             self.courses[course_name] = {'year': new_year, 'grade': new_grade}
                         
-                            # by changing the value of response the while loop ends
-                            response = "stop"
 
                         else:    
                             new_grade = float(grade)
@@ -133,14 +131,11 @@ class Student:
                         print("Change was sucessful!")
                         print(f"The updated value is {course_name} = {self.courses[course_name]}")
 
-                        # by changing the value of response the while loop ends
-                        response = "stop"
 
                     # if they would not like to enter any new data "end" is printed
                     elif response == "no" or response == "n":
 
                         print("End")
-                        response = "stop"
 
             # if the course name dose not already exist in the course names then a new course_name is added 
             # using the adding_values function defined above 
@@ -179,24 +174,25 @@ class Student:
             # providing that the course doesn't already exist the user is asked if they 
             # would like to create a course 
 
+            valid_input = False
+
             answer = str(input("Would you like to create a course? "))
 
-            if answer == "yes" or answer == "y":
+            while valid_input == False: 
 
-                new_grade = grade
-               
-                self.courses = {"grade":new_grade}
+                if answer == "yes" or answer == "y":
+                    valid_input = True
 
-                print(f"The new course is {course} = {self.courses} ")
-            
-            elif answer == "no" or answer == "n": 
-                print("End") 
+                    new_grade = grade
+                
+                    self.courses = {"grade":new_grade}
 
-            # if no valid response is given the user is asked to enter a new response
-            else: 
-                print("invalid input please try again")
-                answer = str(input("Would you like to create a course? "))
+                    print(f"The new course is {course} = {self.courses} ")
+                
+                elif answer == "no" or answer == "n": 
 
+                    valid_input = True
+                    print("End") 
 
 # Create a method called calculate_mean(). It should: 
 #   - have one parameter, either a list of strings or a year (from 1 to 4):
@@ -293,7 +289,7 @@ def New_student():
 
         student_list.append(new_student)
 
-        return student_list
+    return student_list
 
 
 def calculate_overall_mean(self, student_list, course = None):
@@ -323,6 +319,7 @@ def calculate_overall_mean(self, student_list, course = None):
 
             for i in dictionary_calculating_means:
 
+# calculating the mean from the total grade currently stored in dictionary_calculating_means[course]
                 dictionary_calculating_means[i] = dictionary_calculating_means[course]/dictionary_counting[course]
 
             return dictionary_calculating_means

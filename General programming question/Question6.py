@@ -31,8 +31,6 @@ or the program is largely incomplete.
 # input dictionary whose values are all whole numbers (values, not keys).
 # # weight = 5 
 
-input_dictionary = {"hello":5, "yes":12,"england":21, "no": 512, "monkey": 513, "elephant":24}
-
 def value_greatest_even(input_dictionary):
 
 # declaring and initialising the variable greatest_value as 0 
@@ -49,4 +47,4 @@ def value_greatest_even(input_dictionary):
 
     return greatest_value
 
-print(value_greatest_even(input_dictionary))
+print(value_greatest_even({"hello":5, "yes":12,"england":21, "no": 512, "monkey": 513, "elephant":24}))

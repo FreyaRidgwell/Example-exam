@@ -35,9 +35,6 @@ or the program is largely incomplete.
 # weight = 2
 
 
-input_dictionary = {"hello":5, "yes":12,"england":20}
-
-
 def longest_key(input_dictionary):
 
 # declaring and initiating the longest_key variable
@@ -53,8 +50,8 @@ def longest_key(input_dictionary):
 
     return longest_key
 
-print(longest_key(input_dictionary))
 
+print(longest_key({"hello":5, "yes":12,"england":20}))
 
 
 
